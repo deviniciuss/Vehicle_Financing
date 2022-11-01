@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
+    <!--Link My CSS-->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Vehicle Financing</title>
+</head>
+<body>
+
+    <!--Section Tittle-->
+    <section id="tittle">
+        <h1>  Vehicle Financing Calculator 📝</h1>
+    </section>
+
+    <!--Section Financing-->
+    <section id="financing">
+        <div class="container">
+            <form action="action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="country">Type of Financing:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="checkbox" id="intern-btn" name="internal">
+                        <label for="intern-btn">Internal</label>
+                        <input type="checkbox" id="extern-btn" name="external">
+                        <label for="extern-btn">External</label>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-25">
+                        <label for="months">Months:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="months" name="months" placeholder="Months of financing...">
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-25">
+                        <label for="vehicle-price">Vehicle's price:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="vehicle-price" name="vehicle-price" placeholder="Price of your vehicle...">
+                    </div>
+                </div>
+    
+                <div class="row btn">
+                    <button id="btn-calculate" type="button">Calculate</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--Section Result-->
+    <section id="result">
+        <div class="container">
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Result:</label>
+                </div>
+                <div class="col-75">
+                    <input id="result-input" type="text" placeholder="Value of Installment..."> </in>
+                </div>
+            </div>
+            <hr>
+            
+    
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="name" name="name" placeholder="Enter your Name...">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Enter your email...">
+                </div>
+            </div>
+    
+            <div class="row btn">
+                <button id="btn-add" type="button">Save Financing</button>
+            </div>
+    
+    
+        </div>
+        </div>
+    </section>
+
+
+    <!--Section footer-->
+    <section id="footer">
+        <p>© Vinicius Rosa |
+            <a href="https://www.linkedin.com/in/deviniciuss/" target="_blank"><i class="fa fa-linkedin"
+                    aria-hidden="true"></i>
+            </a> |
+            <a href="https://github.com/deviniciuss" target="_blank"><i class="fa fa-github"></i></a>
+        </p>
+    </section>
+
+
+
+
+    <!--Link My JS-->
+    <script src="./assets/js/main.js"> </script>
+</body>
+</html>
