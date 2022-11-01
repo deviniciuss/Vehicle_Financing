@@ -9,8 +9,8 @@ The user who likes the simulation can save it by typing his name and email to co
 
 ## Visuals
 
-![Alt Text](https://github.com/deviniciuss/Vehicle_Financing/blob/main/frontend/assets/computer.gif ) 
   
+<img src="https://github.com/deviniciuss/Vehicle_Financing/blob/main/frontend/assets/computer.gif" />
 
 
 ## Languages, Frameworks & Architectures
@@ -19,10 +19,10 @@ The user who likes the simulation can save it by typing his name and email to co
 - HTML/CSS;
 - Spring Boot;
 - Hibernate;
-- Lombok ;
+- Lombok;
 - REST API;
 - H2 Database;
-- Jpa Repository;
+- Jpa Repository.
 
 
 
