@@ -1,15 +1,17 @@
 # Vehicle_Financing
 
 ## Description
-My app is a fullstack website to simulate vehicle financing, having two types of financing:
+Fullstack website to simulate vehicle financing, having two types of financing:
 - Internal (fee of 4% on the final vehicle's value);
 - External (fee of 6.5% on the final vehicle's value).
 The first option has a limit of 48 months, the second has a limit of 60 months.
 The user who likes the simulation can save it by typing his name and email to consult later.
 
 ## Visuals
-![Alt Text](https://github.com/deviniciuss/Vehicle_Financing/blob/main/frontend/assets/computer2.gif) 
-<img src="https://github.com/deviniciuss/Vehicle_Financing/blob/main/frontend/assets/mobile.gif" width="200" height="300" />
+
+![Alt Text](https://github.com/deviniciuss/Vehicle_Financing/blob/main/frontend/assets/computer.gif ) 
+  
+
 
 ## Languages, Frameworks & Architectures
 - Java;
