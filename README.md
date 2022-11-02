@@ -21,6 +21,7 @@ The user who likes the simulation can save it by typing his name and email to co
 - Hibernate;
 - Lombok;
 - REST API;
+- MySQL;
 - H2 Database;
 - Jpa Repository.
 
