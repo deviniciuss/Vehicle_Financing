@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Controller
@@ -29,24 +28,28 @@ public class VehicleFinancingController {
         return service.findAll();
     }
 
+
     @PostMapping("/calculate")
     public double calculate(@RequestBody VehicleFinancing vehicleFinancing){
-        vehicleFinancing.setValueInstallment(vehicleFinancing.createValueInstallment(
-                vehicleFinancing.getTypeFinancing(),
-                vehicleFinancing.getMonths(),
-                vehicleFinancing.getVehiclePrice()
-        ));
+        double valueInstallment = vehicleFinancing.createValueInstallment(
+                        vehicleFinancing.getTypeFinancing(),
+                        vehicleFinancing.getMonths(),
+                        vehicleFinancing.getVehiclePrice()
+        );
+        vehicleFinancing.setValueInstallment(valueInstallment);
+
         return vehicleFinancing.getValueInstallment();
     }
 
-
     @PostMapping("/add")
     public VehicleFinancing add(@RequestBody VehicleFinancing vehicleFinancing){
-        vehicleFinancing.setValueInstallment(vehicleFinancing.createValueInstallment(
+        double valueInstallment = vehicleFinancing.createValueInstallment(
                 vehicleFinancing.getTypeFinancing(),
                 vehicleFinancing.getMonths(),
                 vehicleFinancing.getVehiclePrice()
-        ));
+        );
+        vehicleFinancing.setValueInstallment(valueInstallment);
+
         return service.add(vehicleFinancing);
     }
 }

@@ -46,7 +46,7 @@ public class VehicleFinancing {
         this.months = months;
         this.vehiclePrice = vehiclePrice;
         double totalAmount = 0.0;
-        double result = 0.0;
+        double result;
 
         if(typeFinancing.equals("internal") && months < 48){
             totalAmount = vehiclePrice * (1+ Percentage.interPercent / 100);
