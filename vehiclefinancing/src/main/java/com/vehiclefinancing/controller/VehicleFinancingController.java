@@ -4,6 +4,8 @@ package com.vehiclefinancing.controller;
 import com.vehiclefinancing.model.VehicleFinancing;
 import com.vehiclefinancing.service.VehicleFinancingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,24 +34,32 @@ public class VehicleFinancingController {
     @PostMapping("/calculate")
     public double calculate(@RequestBody VehicleFinancing vehicleFinancing){
         double valueInstallment = vehicleFinancing.createValueInstallment(
-                        vehicleFinancing.getTypeFinancing(),
-                        vehicleFinancing.getMonths(),
-                        vehicleFinancing.getVehiclePrice()
+                    vehicleFinancing.getTypeFinancing(),
+                    vehicleFinancing.getMonths(),
+                    vehicleFinancing.getVehiclePrice()
         );
         vehicleFinancing.setValueInstallment(valueInstallment);
-
         return vehicleFinancing.getValueInstallment();
     }
 
     @PostMapping("/add")
-    public VehicleFinancing add(@RequestBody VehicleFinancing vehicleFinancing){
-        double valueInstallment = vehicleFinancing.createValueInstallment(
-                vehicleFinancing.getTypeFinancing(),
-                vehicleFinancing.getMonths(),
-                vehicleFinancing.getVehiclePrice()
-        );
-        vehicleFinancing.setValueInstallment(valueInstallment);
+    public ResponseEntity<VehicleFinancing> add(@RequestBody VehicleFinancing vehicleFinancing){
+        try {
+            double valueInstallment = vehicleFinancing.createValueInstallment(
+                    vehicleFinancing.getTypeFinancing(),
+                    vehicleFinancing.getMonths(),
+                    vehicleFinancing.getVehiclePrice()
+            );
+            vehicleFinancing.setValueInstallment(valueInstallment);
 
-        return service.add(vehicleFinancing);
+            service.add(vehicleFinancing);
+
+        } catch (IllegalArgumentException e){
+
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        return ResponseEntity.ok(vehicleFinancing);
     }
 }

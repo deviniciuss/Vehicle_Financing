@@ -48,14 +48,14 @@ public class VehicleFinancing {
         double totalAmount = 0.0;
         double result;
 
-        if(typeFinancing.equals("internal") && months < 48){
+        if(typeFinancing.equals("internal") && months <= 48){
             totalAmount = vehiclePrice * (1+ Percentage.interPercent / 100);
         }
-        if(typeFinancing.equals("external") && months < 60){
+        else if(typeFinancing.equals("external") && months <= 60){
             totalAmount = vehiclePrice * (1+ Percentage.externPercent / 100);
         }
         else {
-            System.out.println("Incorrect Type");
+           throw  new IllegalArgumentException("This option has one limit per month, please try again within the limit!");
         }
 
         result = totalAmount / months;
